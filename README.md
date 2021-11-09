@@ -1,2 +1,2 @@
-# Gee-Web
-Gee-web program from 7days-golang
+# 7days-golang
+program learn from repo of 7days-golang
