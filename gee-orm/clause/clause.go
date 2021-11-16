@@ -49,4 +49,3 @@ func (c *Clause) Build(orders ...Type) (string, []interface{}) {
 	}
 	return strings.Join(sqls, " "), vars
 }
-

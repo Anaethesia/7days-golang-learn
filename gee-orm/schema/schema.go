@@ -35,10 +35,6 @@ func (schema *Schema) GetField(name string) *Field {
 	return schema.fieldMap[name]
 }
 
-type ITableName interface {
-	TableName() string
-}
-
 // Values return the values of dest's member variables
 func (schema *Schema) RecordValues(dest interface{}) []interface{} {
 	destValue := reflect.Indirect(reflect.ValueOf(dest))
@@ -47,6 +43,10 @@ func (schema *Schema) RecordValues(dest interface{}) []interface{} {
 		fieldValues = append(fieldValues, destValue.FieldByName(field.Name).Interface())
 	}
 	return fieldValues
+}
+
+type ITableName interface {
+	TableName() string
 }
 
 // 将对象解析为Schema实例
